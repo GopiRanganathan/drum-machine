@@ -1,38 +1,97 @@
-.App {
-  text-align: center;
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color:rgb(54, 54, 57);
+}
+.App{
+    padding:30px 25px;
+    background-color:rgb(12, 13, 13);
+    display:flex;
+    min-height:30vh;
+    max-width:600px;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.keyboard{
+    width:50%;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+    padding:10px;
 }
+ .drum-pad{
+    height:50px;
+    width:50px;
+    margin:10px;
+    background-color:aquamarine;
+    border:none;
+    outline:none;
+    border-radius:5px;
+    box-shadow: inset -4px -4px 5px 0px rgba(0,0,0,0.75);
+    font-size:20px;
+    color:rgb(96, 93, 93);
+    font-weight:bold;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+ }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+ .drum-pad:active{
+    box-shadow: inset 4px 4px 5px 0px rgba(0,0,0,0.75);
 
-.App-link {
-  color: #61dafb;
-}
+ }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+ .controls{
+    width:50%;
+    padding:10px;
+    text-align:center;
+    color:aquamarine;
+
+ }
+ .controls #display{
+    height:60px;
+    width:150px;
+    background-color:rgb(86, 85, 91);
+    margin:10px auto;
+   padding:20px 0;
+ }
+
+
+
+ .kit,.power{
+    height:30px;
+    width:60px;
+    margin:10px;
+    background-color:rgb(16, 16, 16);
+    border:none;
+    outline:none;
+    border-radius:5px;
+    border:3px solid rgb(86, 85, 91);
+    position:relative;
+    
+ }
+
+ .kit::before,.power.select::before{
+    content:'';
+    height:20px;
+    width:25px;
+    background-color:aquamarine;
+    position:absolute;
+    top:10%;
+    left:3%;
+ }
+ .kit.select::before,.power::before{
+    content:'';
+    height:20px;
+    width:25px;
+    background-color:aquamarine;
+    position:absolute;
+    top:10%;
+    left:50%;
+ }
